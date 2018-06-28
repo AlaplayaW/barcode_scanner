@@ -11,6 +11,15 @@ class App extends Component {
     this.stopScanning = this.stopScanning.bind(this);
   }
 
+  quaggaInitCallback(err) {
+      if (err) {
+          console.log(err);
+          return
+      }
+      console.log("Initialization finished. Ready to start");
+      Quagga.start();
+  }
+
   stopScanning() {
   }
 
@@ -31,6 +40,7 @@ class App extends Component {
         showPattern: true
       }
     },
+    this.quaggaInitCallback.bind(this));
   }
 
   render() {
