@@ -7,6 +7,7 @@ class App extends Component {
 
   constructor() {
     super()
+    this.onProcessed = this.onProcessed.bind(this);
     this.startScanning = this.startScanning.bind(this);
     this.stopScanning = this.stopScanning.bind(this);
   }
@@ -17,7 +18,14 @@ class App extends Component {
           return
       }
       console.log("Initialization finished. Ready to start");
+      this.onProcessed();
       Quagga.start();
+  }
+
+  onProcessed() {
+    Quagga.onProcessed(v => {
+      console.log('onProcessed: ', v)
+    })
   }
 
   stopScanning() {
