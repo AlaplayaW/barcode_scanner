@@ -4,6 +4,13 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  stopScanning() {
+  }
+
+  startScanning () {
+  }
+
   render() {
     return (
       <div className="App">
@@ -13,6 +20,8 @@ class App extends Component {
         </header>
         <p className="App-intro">
         </p>
+        <button onClick={this.startScanning}>Start</button>
+        <button onClick={this.stopScanning}>Stop</button>
       </div>
     );
   }
