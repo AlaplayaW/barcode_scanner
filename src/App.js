@@ -29,6 +29,7 @@ class App extends Component {
   }
 
   stopScanning() {
+    Quagga.stop();
   }
 
   startScanning () {
