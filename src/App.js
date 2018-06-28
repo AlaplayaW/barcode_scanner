@@ -5,6 +5,8 @@ import './App.css';
 
 class App extends Component {
 
+    this.startScanning = this.startScanning.bind(this);
+    this.stopScanning = this.stopScanning.bind(this);
   stopScanning() {
   }
 
