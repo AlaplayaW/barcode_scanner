@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Quagga  from 'quagga';
 import logo from './logo.svg';
 import './App.css';
 
