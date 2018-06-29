@@ -7,6 +7,16 @@ class App extends Component {
 
   constructor() {
     super()
+
+    this.state = {
+      codes: [],
+      scannerActive: false,
+      canvas: {},
+      context: {},
+      video: {},
+      imageUrls: [],
+    }
+
     this.onProcessed = this.onProcessed.bind(this)
     this.startScanning = this.startScanning.bind(this)
     this.stopScanning = this.stopScanning.bind(this)
