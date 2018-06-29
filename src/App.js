@@ -114,9 +114,9 @@ class App extends Component {
         </header>
         <p className="App-intro">
         </p>
-        <button onClick={this.startScanning}>Start</button>
+        <button onClick={this.startScanning}>Scan</button>
         <div className="input-stream"></div>
-        <button onClick={this.stopScanning}>Stop</button>
+        <button onClick={this.stopScanning}>Cancel</button>
       </div>
     );
   }
