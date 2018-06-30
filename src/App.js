@@ -88,7 +88,7 @@ class App extends Component {
   startScanning () {
      Quagga.init({
       inputStream : {
-        name : "Tjene Barcode Scanner",
+        name : "Barcode Scanner",
         type : "LiveStream",
         target: document.querySelector('.input-stream')    // Or '#yourElement' (optional)
       },
