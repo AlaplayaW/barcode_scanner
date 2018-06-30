@@ -51,17 +51,18 @@ class App extends Component {
     window.alert('You have already scanned this barcode.')
   }
 
-  onDetectedHandler(data) {
     console.log('onDetectedHandler()')
+  // destructure argument into the information we need, to avoid imperative variable declarations with all the usual verbose validity checks.
+  onDetectedHandler([{codeResult}], ...otherData) {
 
     this.captureImage()
     this.stopScanning()
 
     // check if the code is already in state, and alert if it is, or add to state if not.
-    this.state.codes.includes(data.codeResult.code)
+    this.state.codes.includes(codeResult.code)
       ? this.displayDuplicateAlert()
       : (() => {
-        this.addDetectedCode(data.codeResult.code)
+        this.addDetectedCode(codeResult.code)
     })()
   }
 
