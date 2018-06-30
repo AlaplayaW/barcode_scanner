@@ -46,6 +46,7 @@ class App extends Component {
       })
   }
 
+  // display alert if a barcode is scanned a second time.
   displayDuplicateAlert() {
     window.alert('You have already scanned this barcode.')
   }
