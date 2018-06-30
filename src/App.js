@@ -124,8 +124,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title"> Barcode Scanner</h1>
         </header>
-        <p className="App-intro">
-        </p>
+        <ul className="codes">
+        {this.state.codes.map((v, i) => {
+          return (<li key={i}>{v}</li>)
+        })}
+        </ul>
         <button onClick={this.startScanning}>Scan</button>
         <div className="input-stream"></div>
         <button onClick={this.stopScanning}>Cancel</button>
