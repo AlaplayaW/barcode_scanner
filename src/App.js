@@ -84,6 +84,11 @@ class App extends Component {
   }
 
   startScanning () {
+
+    this.setState({
+        scannerActive: true
+    })
+
     Quagga.init({
       inputStream : {
         name : "Barcode Scanner",
