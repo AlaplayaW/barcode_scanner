@@ -99,6 +99,7 @@ class App extends Component {
         readers : ["code_128_reader"],
         multiple : false,
       },
+      locate : true,
       debug: {
         drawBoundingBox: true,
         showFrequency: true,
