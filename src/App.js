@@ -91,7 +91,8 @@ class App extends Component {
         target: document.querySelector('.input-stream')    // Or '#yourElement' (optional)
       },
       decoder : {
-        readers : ["code_128_reader"]
+        readers : ["code_128_reader"],
+        multiple : false,
       },
       debug: {
         drawBoundingBox: true,
