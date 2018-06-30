@@ -17,7 +17,6 @@ class App extends Component {
       imageUrls: [],
     }
 
-    this.onProcessed = this.onProcessed.bind(this)
     this.onDetected = this.onDetected.bind(this)
     this.startScanning = this.startScanning.bind(this)
     this.stopScanning = this.stopScanning.bind(this)
@@ -33,7 +32,6 @@ class App extends Component {
 
       console.log("Initialization finished. Ready to start");
 
-      this.onProcessed();
       this.onDetected();
 
       Quagga.start()
@@ -86,7 +84,7 @@ class App extends Component {
   }
 
   startScanning () {
-     Quagga.init({
+    Quagga.init({
       inputStream : {
         name : "Barcode Scanner",
         type : "LiveStream",
