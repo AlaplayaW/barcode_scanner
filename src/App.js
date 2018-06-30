@@ -17,7 +17,7 @@ class App extends Component {
       imageUrls: [],
     }
 
-    this.onDetected = this.onDetected.bind(this)
+    this.onDetectedHandler = this.onDetectedHandler.bind(this)
     this.startScanning = this.startScanning.bind(this)
     this.stopScanning = this.stopScanning.bind(this)
     this.captureImage = this.captureImage.bind(this)
@@ -31,8 +31,8 @@ class App extends Component {
       }
 
       console.log("Initialization finished. Ready to start");
+      Quagga.onDetected(this.onDetectedHandler)
 
-      this.onDetected();
 
       Quagga.start()
 
@@ -50,16 +50,18 @@ class App extends Component {
     window.alert('You have already scanned this barcode.')
   }
 
-  onDetected() {
-    Quagga.onDetected(v => {
-      this.captureImage()
-      this.stopScanning()
-      this.state.codes.includes(v.codeResult.code)
-        ? this.displayDuplicateAlert()
-        : (() => {
-          this.addDetectedCode(v.codeResult.code)
-        })()
-    })
+  onDetectedHandler(data) {
+    console.log('onDetectedHandler()')
+
+    this.captureImage()
+    this.stopScanning()
+
+    // check if the code is already in state, and alert if it is, or add to state if not.
+    this.state.codes.includes(data.codeResult.code)
+      ? this.displayDuplicateAlert()
+      : (() => {
+        this.addDetectedCode(data.codeResult.code)
+    })()
   }
 
   captureImage() {
