@@ -131,6 +131,14 @@ class App extends Component {
         <button onClick={this.startScanning}>Scan</button>
         <div className="input-stream"></div>
         <button onClick={this.stopScanning}>Cancel</button>
+        <div>Barcode Images</div>
+        <ul className="barcodeImages">
+          {
+            this.state.imageUrls.map((v, i) => {
+              return (<li key={i}><img src={v}/></li>)
+            })
+          }
+        </ul>
       </div>
     );
   }
