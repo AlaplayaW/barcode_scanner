@@ -110,6 +110,7 @@ class App extends Component {
           height: 240,
         },
       },
+      frequency: 2,
       decoder : {
         readers : ["code_128_reader"],
         multiple : false,
