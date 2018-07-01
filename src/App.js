@@ -8,6 +8,7 @@ class App extends Component {
   constructor() {
     super()
 
+    // state contains references to as yet un-instantiated HTML elements, as well as arrays to store codes and urls
     this.state = {
       codes: [],
       scannerActive: false,
@@ -17,6 +18,7 @@ class App extends Component {
       imageUrls: [],
     }
 
+    // react component class bindings for methods, for scope access.
     this.onDetectedHandler = this.onDetectedHandler.bind(this)
     this.startScanning = this.startScanning.bind(this)
     this.stopScanning = this.stopScanning.bind(this)
@@ -27,6 +29,7 @@ class App extends Component {
     this.startScanning();
   }
 
+  // callback for after Quagga barcode scanner has initialized
   quaggaInitCallback(err) {
 
       if (err) {
@@ -34,12 +37,14 @@ class App extends Component {
           return
       }
 
+      // assign handler for barcode detection event
       Quagga.onDetected(this.onDetectedHandler)
 
       console.log("Initialization finished. Ready to start");
 
       Quagga.start()
 
+      // once Quagga barcode scanner has instantiated, barcode scanner HTML elements are present and ready to be attached to state.
       this.setState({
         canvas: document.querySelector('.input-stream canvas'),
       })
@@ -77,28 +82,37 @@ class App extends Component {
 
   }
 
+  // save the image as a blob in local state
   captureImage() {
+    // draw the image into an html canvas element from the video stream
     this.state.context.drawImage(this.state.video, 0, 0, this.state.canvas.width, this.state.canvas.height)
+    // export blob from canvas element
     this.state.canvas.toBlob(blob => {
+      // give blob a url
       const url = URL.createObjectURL(blob)
       console.log('url: ', url)
+      // add blob url to state for access by the image list element
       this.setState({
         imageUrls: [...this.state.imageUrls, url]
       })
+      // clear the canvas to be ready for the next scan
       this.state.context.clearRect(0, 0, this.state.canvas.width, this.state.canvas.height);
     })
   }
 
+  // add new detected barcode to state
   addDetectedCode(code) {
     this.setState({
       codes: [...this.state.codes, code]
     })
   }
 
+  // remove the scanner instance
   stopScanning() {
     Quagga.stop()
   }
 
+  // initialize the scanner instance
   startScanning () {
 
     this.setState({
