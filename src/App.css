@@ -1,25 +1,45 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 1.5em;
 }
 
 .App-header {
+  display: flex;
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  padding: 0.5em;
   color: white;
 }
 
 .App-title {
   font-size: 1.5em;
+  margin: 0;
 }
 
-.App-intro {
-  font-size: large;
+.input-stream {
+  width: 100%;
+}
+
+.input-stream canvas {
+  opacity: 0;
+  position: absolute;
+}
+
+.barcodeImageContainer {
+  width: 100%;
+}
+
+.barcodeImages {
+  display: flex;
+  position: absolute;
+  overflow-x: scroll;
+  width: 100%;
+  list-style-type: none;
 }
 
 @keyframes App-logo-spin {
