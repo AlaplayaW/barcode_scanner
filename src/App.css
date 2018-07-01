@@ -15,11 +15,14 @@
   display: flex;
   padding: 0.5em;
   color: white;
+  justify-content: space-between;
+
 }
 
 .App-title {
   font-size: 1.5em;
   margin: 0;
+  font-weight: 400;
 }
 
 .input-stream {
