@@ -58,6 +58,7 @@ class App extends Component {
     console.log('onDetectedHandler()')
   // destructure argument into the information we need, to avoid imperative variable declarations with all the usual verbose validity checks.
   onDetectedHandler({codeResult}) {
+    Quagga.offDetected()
     this.captureImage()
 
     // check if the code is already in state, and alert if it is, or add to state if not.
@@ -66,6 +67,9 @@ class App extends Component {
       : (() => {
         this.addDetectedCode(codeResult.code)
     })()
+
+    setTimeout(Quagga.onDetected(this.onDetectedHandler), 1000)
+
   }
 
   captureImage() {
