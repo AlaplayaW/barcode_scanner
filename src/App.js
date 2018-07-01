@@ -115,24 +115,6 @@ class App extends Component {
         multiple : false,
       },
       locate : true,
-      debug: {
-        drawBoundingBox: true,
-        showFrequency: true,
-        drawScanline: true,
-        showPattern: true,
-        showCanvas: true,
-        showPatches: true,
-        showFoundPatches: true,
-        showSkeleton: true,
-        showLabels: true,
-        showPatchLabels: true,
-        showRemainingPatchLabels: true,
-        boxFromPatches: {
-          showTransformed: true,
-          showTransformedBox: true,
-          showBB: true
-        }
-      }
     },
     this.quaggaInitCallback.bind(this));
   }
