@@ -149,14 +149,14 @@ class App extends Component {
         </header>
         <div className="input-stream"></div>
         <div className="barcodeImageContainer">
-          <div>Barcode Images</div>
+          <div className="barcodeImagesHeader">Barcode Images</div>
           <ul className="barcodeImages">
             {
               this.state.imageUrls.map((v, i) => {
                 return (
                   <li key={i}>
                     <img alt={this.state.codes[i]} src={v}/>
-                    {this.state.codes[i]}
+                    <div>{this.state.codes[i]}</div>
                   </li>
                   )
               })
