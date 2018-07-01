@@ -34,9 +34,9 @@ class App extends Component {
           return
       }
 
-      console.log("Initialization finished. Ready to start");
       Quagga.onDetected(this.onDetectedHandler)
 
+      console.log("Initialization finished. Ready to start");
 
       Quagga.start()
 
