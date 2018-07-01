@@ -104,7 +104,11 @@ class App extends Component {
       inputStream : {
         name : "Barcode Scanner",
         type : "LiveStream",
-        target: document.querySelector('.input-stream')    // Or '#yourElement' (optional)
+        target: document.querySelector('.input-stream'),
+        constraints: {
+          width: 640,
+          height: 240,
+        },
       },
       decoder : {
         readers : ["code_128_reader"],
