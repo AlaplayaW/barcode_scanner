@@ -126,22 +126,24 @@ class App extends Component {
           <h1 className="App-title"> Barcode Scanner</h1>
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <ul className="codes">
-        {this.state.codes.map((v, i) => {
-          return (<li key={i}>{v}</li>)
-        })}
-        </ul>
         <button onClick={this.startScanning}>Scan</button>
         <div className="input-stream"></div>
         <button onClick={this.stopScanning}>Cancel</button>
-        <div>Barcode Images</div>
-        <ul className="barcodeImages">
-          {
-            this.state.imageUrls.map((v, i) => {
-              return (<li key={i}><img src={v}/></li>)
-            })
-          }
-        </ul>
+        <div className="barcodeImageContainer">
+          <div>Barcode Images</div>
+          <ul className="barcodeImages">
+            {
+              this.state.imageUrls.map((v, i) => {
+                return (
+                  <li key={i}>
+                    <img alt={this.state.codes[i]} src={v}/>
+                    {this.state.codes[i]}
+                  </li>
+                  )
+              })
+            }
+          </ul>
+        </div>
       </div>
     );
   }
