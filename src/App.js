@@ -64,12 +64,13 @@ class App extends Component {
   // destructure argument into the information we need, to avoid imperative variable declarations with all the usual verbose validity checks.
   onDetectedHandler({codeResult}) {
     Quagga.offDetected()
-    this.captureImage()
 
-    // check if the code is already in state, and alert if it is, or add to state if not.
+
+    // check if the code is already in state, and alert if it is, or add to state and capture if not.
     this.state.codes.includes(codeResult.code)
       ? this.displayDuplicateAlert()
       : (() => {
+        this.captureImage()
         this.addDetectedCode(codeResult.code)
     })()
 
