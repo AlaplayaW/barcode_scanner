@@ -23,6 +23,10 @@ class App extends Component {
     this.captureImage = this.captureImage.bind(this)
   }
 
+  componentDidMount() {
+    this.startScanning();
+  }
+
   quaggaInitCallback(err) {
 
       if (err) {
@@ -56,7 +60,6 @@ class App extends Component {
   onDetectedHandler([{codeResult}], ...otherData) {
 
     this.captureImage()
-    this.stopScanning()
 
     // check if the code is already in state, and alert if it is, or add to state if not.
     this.state.codes.includes(codeResult.code)
@@ -74,6 +77,7 @@ class App extends Component {
       this.setState({
         imageUrls: [...this.state.imageUrls, url]
       })
+      this.state.context.clearRect(0, 0, this.state.canvas.width, this.state.canvas.height);
     })
   }
 
@@ -101,7 +105,7 @@ class App extends Component {
       },
       decoder : {
         readers : ["code_128_reader"],
-        multiple : false,
+        multiple : true,
       },
       locate : true,
       debug: {
