@@ -57,8 +57,7 @@ class App extends Component {
 
     console.log('onDetectedHandler()')
   // destructure argument into the information we need, to avoid imperative variable declarations with all the usual verbose validity checks.
-  onDetectedHandler([{codeResult}], ...otherData) {
-
+  onDetectedHandler({codeResult}) {
     this.captureImage()
 
     // check if the code is already in state, and alert if it is, or add to state if not.
@@ -105,7 +104,7 @@ class App extends Component {
       },
       decoder : {
         readers : ["code_128_reader"],
-        multiple : true,
+        multiple : false,
       },
       locate : true,
       debug: {
