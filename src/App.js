@@ -126,9 +126,7 @@ class App extends Component {
           <h1 className="App-title"> Barcode Scanner</h1>
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        {/* <button onClick={this.startScanning}>Scan</button>*/}
         <div className="input-stream"></div>
-        {/*<button onClick={this.stopScanning}>Cancel</button>*/}
         <div className="barcodeImageContainer">
           <div>Barcode Images</div>
           <ul className="barcodeImages">
