@@ -68,7 +68,12 @@ class App extends Component {
         this.addDetectedCode(codeResult.code)
     })()
 
-    setTimeout(Quagga.onDetected(this.onDetectedHandler), 1000)
+    /* re-assign handler to event listener with delay, because it was removed after successful barcode detection, 
+    to prevent a stream of barcode detection events from being triggered and created a mess of multiple images.
+    The delay gives the  user time to physically move the code away from the camera */
+    setTimeout(() => {
+      Quagga.onDetected(this.onDetectedHandler)
+    }, 2000)
 
   }
 
