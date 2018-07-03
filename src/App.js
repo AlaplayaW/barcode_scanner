@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import Quagga  from 'quagga';
 
@@ -6,7 +8,14 @@ import BarcodeListItem from './components/barcode_list_item.js'
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+type State = {
+  codes: Array<String>,
+  scannerActive: boolean,
+  canvas: {},
+
+};
+
+class App extends Component<State> {
 
   constructor() {
     super()
