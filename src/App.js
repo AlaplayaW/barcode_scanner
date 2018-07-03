@@ -11,6 +11,7 @@ class App extends Component {
     // state contains references to as yet un-instantiated HTML elements, as well as arrays to store codes and urls
     this.state = {
       codes: [],
+      labels: [],
       scannerActive: false,
       canvas: {},
       context: {},
@@ -104,7 +105,8 @@ class App extends Component {
   // add new detected barcode to state
   addDetectedCode(code) {
     this.setState({
-      codes: [...this.state.codes, code]
+      codes: [...this.state.codes, code],
+      labels: [...this.state.labels, code]
     })
   }
 
