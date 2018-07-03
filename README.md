@@ -4,7 +4,9 @@ This project uses the QuaggaJS barcode scanner to scan CODE 128 barcodes into lo
 
 Test the app using the barcode images provided. Save the provided barcodes to a mobile phone or print them out, and then hold them in front of the camera of the device you are running the app on.
 
-To run the application, from the project directory;
-`npm install` 
+To install the app, clone the repo and from the project directory type:
+`npm install`
+
+Once installation is complete, to run the application, from the project directory;
 `npm start`
 
