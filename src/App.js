@@ -172,6 +172,10 @@ class App extends Component<State> {
     this.setState({search_value: e.target.value});
   }
 
+  searchFilter(index) {
+    return (this.state.labels.findIndex(value => this.state.search_value === value) === index) || this.state.search_value === ''
+  }
+
   render() {
     return (
       <div className="App">
@@ -190,9 +194,13 @@ class App extends Component<State> {
               </div>
             </div>
             <ul className="barcodeImages">
-              {
-                this.state.imageUrls.map((v, i) => (<BarcodeListItem label={this.state.labels[i]} code={this.state.codes[i]} saveNewLabel={this.saveNewLabel} identifier={i} value={v} key={i.toString()}/>))
-              }
+              {this.state.imageUrls.map((v, i) => {
+                if (this.searchFilter(i)) {
+                  return (<BarcodeListItem label={this.state.labels[i]} code={this.state.codes[i]} saveNewLabel={this.saveNewLabel} identifier={i} value={v} key={i.toString()} />)
+                } else {
+                  return null
+                }
+              })}
             </ul>
           </div>
         </div>
