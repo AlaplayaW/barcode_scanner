@@ -42,6 +42,9 @@ html {
   position: absolute;
   left: 0;
 }
+
+.input-stream video {
+  width: 100%;
 }
 
 .barcodeImageContainer {
