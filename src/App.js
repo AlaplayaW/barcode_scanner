@@ -3,10 +3,16 @@
 import React, { Component } from 'react';
 import Quagga  from 'quagga';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
 import BarcodeListItem from './components/barcode_list_item.js'
 
 import logo from './logo.svg';
 import './App.css';
+
+library.add(faSearch)
 
 type State = {
   codes: Array<String>,
@@ -29,6 +35,7 @@ class App extends Component<State> {
       context: {},
       video: {},
       imageUrls: [],
+      search_value: ''
     }
 
     // react component class bindings for methods, for scope access.
@@ -37,7 +44,7 @@ class App extends Component<State> {
     this.stopScanning = this.stopScanning.bind(this)
     this.captureImage = this.captureImage.bind(this)
     this.saveNewLabel = this.saveNewLabel.bind(this)
-
+    this.setSearchValue = this.setSearchValue.bind(this)
   }
 
   componentDidMount() {
@@ -161,6 +168,10 @@ class App extends Component<State> {
     })
   }
 
+  setSearchValue(e) {
+    this.setState({search_value: e.target.value});
+  }
+
   render() {
     return (
       <div className="App">
@@ -171,7 +182,13 @@ class App extends Component<State> {
           </header>
           <div className="input-stream"></div>
           <div className="barcodeImageContainer">
-            <div className="barcodeImagesHeader">Barcode Images</div>
+            <div className="barcodeImagesHeader">
+              <div className="barcodeImagesTitle">Barcode Images</div>
+              <div className="barcodeImagesSearch">
+                <FontAwesomeIcon icon="search" />
+                <input type="text" onChange={this.setSearchValue}></input>
+              </div>
+            </div>
             <ul className="barcodeImages">
               {
                 this.state.imageUrls.map((v, i) => (<BarcodeListItem label={this.state.labels[i]} code={this.state.codes[i]} saveNewLabel={this.saveNewLabel} identifier={i} value={v} key={i.toString()}/>))
