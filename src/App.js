@@ -172,8 +172,10 @@ class App extends Component<State> {
     this.setState({search_value: e.target.value});
   }
 
+  // filter list of barcodes using search value against labels, unless search value is empty. not case sensitive.
   searchFilter(index) {
-    return (this.state.labels.findIndex(value => this.state.search_value === value) === index) || this.state.search_value === ''
+    return (this.state.labels.findIndex(value => this.state.search_value.toLowerCase() === value.toLowerCase()) === index)
+      || (this.state.search_value === '')
   }
 
   render() {
