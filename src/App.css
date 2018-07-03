@@ -56,6 +56,15 @@ html {
 
 .barcodeImagesHeader {
   padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.barcodeImagesSearch input {
+    background-color: #222;
+    color: white;
+    margin-left: 0.5em;
+    font-size: 1em;
 }
 
 .barcodeImages {
