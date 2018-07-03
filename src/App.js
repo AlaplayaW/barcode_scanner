@@ -24,6 +24,8 @@ class App extends Component {
     this.startScanning = this.startScanning.bind(this)
     this.stopScanning = this.stopScanning.bind(this)
     this.captureImage = this.captureImage.bind(this)
+    this.saveNewLabel = this.saveNewLabel.bind(this)
+
   }
 
   componentDidMount() {
@@ -137,6 +139,14 @@ class App extends Component {
       locate : true,
     },
     this.quaggaInitCallback.bind(this));
+  }
+
+  saveNewLabel(value, identifier) {
+    this.setState({
+      labels: this.state.labels.map((v, i) => {
+        return i === identifier ? value : v
+      })
+    })
   }
 
   render() {
