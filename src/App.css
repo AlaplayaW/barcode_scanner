@@ -7,11 +7,13 @@ html {
   display: flex;
   justify-content: space-around;
 }
+
+.AppContainer {
   display: flex;
   flex-direction: column;
-  height: 100%;
   background-color: #222;
   height: 100%;
+  width: 50em;
 }
 
 .App-logo {
