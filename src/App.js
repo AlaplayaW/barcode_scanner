@@ -152,25 +152,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title"> Barcode Scanner</h1>
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-        <div className="input-stream"></div>
-        <div className="barcodeImageContainer">
-          <div className="barcodeImagesHeader">Barcode Images</div>
-          <ul className="barcodeImages">
-            {
-              this.state.imageUrls.map((v, i) => {
-                return (
-                  <li key={i}>
-                    <img alt={this.state.codes[i]} src={v}/>
-                    <div>{this.state.codes[i]}</div>
-                  </li>
-                  )
-              })
-            }
-          </ul>
+        <div className="AppContainer">
+          <header className="App-header">
+            <h1 className="App-title"> Barcode Scanner</h1>
+            <img src={logo} className="App-logo" alt="logo" />
+          </header>
+          <div className="input-stream"></div>
+          <div className="barcodeImageContainer">
+            <div className="barcodeImagesHeader">Barcode Images</div>
+            <ul className="barcodeImages">
+              {
+                this.state.imageUrls.map((v, i) => (<BarcodeListItem label={this.state.labels[i]} code={this.state.codes[i]} saveNewLabel={this.saveNewLabel} identifier={i} value={v} key={i.toString()}/>))
+              }
+            </ul>
+          </div>
         </div>
       </div>
     );
