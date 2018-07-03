@@ -160,6 +160,7 @@ class App extends Component<State> {
     this.quaggaInitCallback.bind(this));
   }
 
+  // change label to whatever the user specifies.
   saveNewLabel(value, identifier) {
     this.setState({
       labels: this.state.labels.map((v, i) => {
@@ -168,6 +169,7 @@ class App extends Component<State> {
     })
   }
 
+  // search input
   setSearchValue(e) {
     this.setState({search_value: e.target.value});
   }
