@@ -18,7 +18,7 @@ type State = {
   codes: Array<String>,
   scannerActive: boolean,
   canvas: {},
-
+  search_value: string
 };
 
 class App extends Component<State> {
