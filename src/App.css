@@ -40,6 +40,8 @@ html {
 .input-stream canvas {
   opacity: 0;
   position: absolute;
+  left: 0;
+}
 }
 
 .barcodeImageContainer {
