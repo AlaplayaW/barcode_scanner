@@ -1,111 +1,110 @@
 html {
   height: 100%;
   background-color: black;
-}
 
-.App {
-  display: flex;
-  justify-content: space-around;
-}
+  .App {
+    display: flex;
+    justify-content: space-around;
 
-.AppContainer {
-  display: flex;
-  flex-direction: column;
-  background-color: #222;
-  height: 100%;
-  width: 50em;
-}
+    .AppContainer {
+      display: flex;
+      flex-direction: column;
+      background-color: #222;
+      height: 100%;
+      width: 50em;
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 1.5em;
-}
+      .App-header {
+        display: flex;
+        padding: 0.5em;
+        color: white;
+        justify-content: space-between;
 
-.App-header {
-  display: flex;
-  padding: 0.5em;
-  color: white;
-  justify-content: space-between;
+        .App-logo {
+          animation: App-logo-spin infinite 20s linear;
+          height: 1.5em;
 
-}
+          @keyframes App-logo-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+        }
 
-.App-title {
-  font-size: 1.5em;
-  margin: 0;
-  font-weight: 400;
-}
+        .App-title {
+          font-size: 1.5em;
+          margin: 0;
+          font-weight: 400;
+        }
+      }
 
-.input-stream {
-  width: 100%;
-}
+      .input-stream {
+        width: 100%;
 
-.input-stream canvas {
-  opacity: 0;
-  position: absolute;
-  left: 0;
-}
+        canvas {
+          opacity: 0;
+          position: absolute;
+          left: 0;
+        }
 
-.input-stream video {
-  width: 100%;
-}
+        video {
+          width: 100%;
+        }
+      }
 
-.barcodeImageContainer {
-  width: 100%;
-  color: white;
-}
+      .barcodeImageContainer {
+        width: 100%;
+        color: white;
 
-.barcodeImagesHeader {
-  padding: 0.5em;
-  display: flex;
-  justify-content: space-between;
-}
+        .barcodeImagesHeader {
+          padding: 0.5em;
+          display: flex;
+          justify-content: space-between;
 
-.barcodeImagesSearch input {
-    background-color: #222;
-    color: white;
-    margin-left: 0.5em;
-    font-size: 1em;
-}
+          .barcodeImagesSearch input {
+              background-color: #222;
+              color: white;
+              margin-left: 0.5em;
+              font-size: 1em;
+          }
+        }
 
-.barcodeImages {
-  display: flex;
-  overflow-x: scroll;
-  width: 100%;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+        .barcodeImages {
+          display: flex;
+          overflow-x: scroll;
+          width: 100%;
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
 
-.barcodeImages li  {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+          li  {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
 
-.barcodeInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 3em;
-}
+            .barcodeInfo {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              height: 3em;
 
-.barcodeInfo input {
-  background-color: #222;
-  color: white;
-}
+              .name svg {
+                padding: 0;
+                margin-left: 1em;
+                cursor: pointer;
+              }
 
-.barcodeInfo * {
-  padding: 0.5em;
-  display: flex;
-}
+              input {
+                background-color: #222;
+                color: white;
+              }
 
-.name svg {
-  padding: 0;
-  margin-left: 1em;
-  cursor: pointer;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+              * {
+                padding: 0.5em;
+                display: flex;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
