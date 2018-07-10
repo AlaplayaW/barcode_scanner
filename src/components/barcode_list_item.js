@@ -1,8 +1,8 @@
 import React from 'react'
 
-import EditableLabel from './editable_label.js'
 import 'components/barcode_list_item/barcode_list_item.css'
 
+import EditableLabel from 'components/editable_label/editable_label.js'
 
 class BarcodeListItem extends React.Component {
   constructor(props) {
