@@ -7,10 +7,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-import BarcodeListItem from './components/barcode_list_item.js'
+import BarcodeListItem from 'components/barcode_list_item/barcode_list_item.js'
 
-import logo from './logo.svg';
-import './App.css';
+import logo from 'logo.svg';
+import 'App.css';
 
 library.add(faSearch)
 
