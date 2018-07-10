@@ -51,7 +51,7 @@ class EditableLabel extends React.Component {
       )
     } else {
       return (
-        <div>
+        <div className="EditableLabel">
           <span>Label: </span>
           <input type="text" ref={this.props.identifier} onKeyDown={this.saveNewLabel}></input>
         </div>
