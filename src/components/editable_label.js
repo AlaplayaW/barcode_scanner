@@ -4,6 +4,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 
+import 'components/editable_label/editable_label.css'
+
 library.add(faEdit)
 
 class EditableLabel extends React.Component {
