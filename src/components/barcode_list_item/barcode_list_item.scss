@@ -1,0 +1,14 @@
+.BarcodeListItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .barcodeInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3em;
+    padding-left: 1em;
+
+  }
+}
