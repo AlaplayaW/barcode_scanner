@@ -44,7 +44,7 @@ class EditableLabel extends React.Component {
   render() {
     if (this.state.editLabelMode === false) {
       return (
-        <div className="name" onClick={this.setEditLabelModeTrue}>
+        <div className="EditableLabel name" onClick={this.setEditLabelModeTrue}>
           Label: {this.props.label}
           <FontAwesomeIcon icon="edit" />
         </div>
