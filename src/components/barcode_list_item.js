@@ -9,7 +9,7 @@ class BarcodeListItem extends React.Component {
 
   render() {
     return (
-      <li>
+      <li className="BarcodeListItem">
         <img alt={this.props.code} src={this.props.value}/>
         <div className="barcodeInfo">
           <div className="code">Code: {this.props.code}</div>
