@@ -1,0 +1,15 @@
+.EditableLabel.name svg {
+  padding: 0;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.EditableLabel input {
+  background-color: #222;
+  color: white;
+}
+
+.EditableLabel * {
+  padding: 0.5em;
+  display: flex;
+}
